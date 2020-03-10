@@ -51,7 +51,10 @@
 
         #gsheets{
             width:90%;
-            height:1000px;
+            height:900px;
+        }
+        #refresh{
+            text-align: center;
         }
         </style>
     <body>
@@ -77,8 +80,17 @@
                 </tr>
             </table>
             </div>
+            <div id="refresh">
+                <br>
+                <button id ="refresh" onclick="refreshIframe();">Refresh Scores</button>
+                <br><br>
+            </div>
             <div id="Scores">
-                <iframe id="gsheets"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPqtbtKOf1W-InPNrnDgs2m8B__rrtqHISpSTs1mBTjb3QlGU3Bt7yA-RkJ_GRIaZKqxQDDSc-nz2U/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                 
+                <iframe id="gsheets" name = "scoresheet"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRPqtbtKOf1W-InPNrnDgs2m8B__rrtqHISpSTs1mBTjb3QlGU3Bt7yA-RkJ_GRIaZKqxQDDSc-nz2U/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                <script>function refreshIframe(){
+                    var ifr = document.getElementsByName('scoresheet')[0];
+                    ifr.src = ifr.src}</script>
             </div>
         </div>
     </body>
